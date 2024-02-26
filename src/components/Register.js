@@ -21,12 +21,12 @@ export function Register() {
    navigate('/');
    } 
    catch (error) {
-    console.log(error.code);
-    if (error.code === "auth/invalid-email"){
-      setError('Correo invalido')
+    // console.log(error.code);
+    // if (error.code === "auth/invalid-email"){
+    //   setError('Correo invalido')
   
-    }
-    //setError(error.message);
+    // }
+    setError(error.message);
    } 
   };
 
