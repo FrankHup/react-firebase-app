@@ -30,6 +30,9 @@ export function Login() {
    } 
   };
 
+  const handleGoogleSignin=()=>{
+    
+  }
 
   return (
    <div>
@@ -55,6 +58,7 @@ export function Login() {
       <br />
       <button>Login</button>
     </form>
+    <button onClick={handleGoogleSignin}>Google  Sign In</button>
    </div>
   );
 }
