@@ -21,11 +21,7 @@ export function Login() {
    navigate('/');
    } 
    catch (error) {
-    // console.log(error.code);
-    // if (error.code === "auth/invalid-email"){
-    //   setError('Correo invalido')
   
-    // }
     setError(error.message);
    } 
   };
