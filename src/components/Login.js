@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export function Login() {
   const [user, setUser] = useState({ name: "", email: "" });
 
-  const {login}=useAuth()
+  const {login, loginWithGoogle}=useAuth()
   const navigate= useNavigate()
   const [error, setError]=useState();
 
@@ -30,8 +30,13 @@ export function Login() {
    } 
   };
 
-  const handleGoogleSignin=()=>{
-    
+  const handleGoogleSignin= async()=>{
+  try {await loginWithGoogle();
+  navigate("/");
+  }catch (error) {
+    setError(error.message)
+  };
+    alert("Hubo un error al iniciar sesión con Google.")
   }
 
   return (
