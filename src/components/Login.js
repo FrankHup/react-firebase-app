@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from "react-router-dom";
+import { Alert } from "./Alert";
 
 export function Login() {
   const [user, setUser] = useState({ name: "", email: "" });
@@ -21,7 +22,12 @@ export function Login() {
    navigate('/');
    } 
    catch (error) {
+    // console.log(error.code);
+    // if (error.code === "auth/invalid-email"){
+    //   setError('Correo invalido')
   
+    // }
+    
     setError(error.message);
    } 
   };
@@ -37,7 +43,7 @@ export function Login() {
 
   return (
    <div>
-    {error && <p>{error}</p>}
+    {error && <Alert message={error} type="error" />}
 
      <form onSubmit={handleSubmit}>
       <label htmlFor="email">Email</label>
