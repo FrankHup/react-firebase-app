@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Alert } from "./Alert";
 
 export function Login() {
@@ -48,10 +48,13 @@ export function Login() {
         onSubmit={handleSubmit}
         className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
       >
+        <div>
+          <p className="appearance-none w-full py-3 text-xl text-black-700 text-center leading-tight font-bold">Inicio de sesión</p>
+        </div>
         <div className="mb-4">
           <label
             htmlFor="email"
-            className="block text-gray-700 text-sm font-fold mb-2"
+            className="block text-gray-700 text-sm font-bold mb-2"
           >
             Email
           </label>
@@ -66,7 +69,7 @@ export function Login() {
         <div className="mb-4">
           <label
             htmlFor="password"
-            className="block text-gray-700 text-sm font-fold mb-2"
+            className="block text-gray-700 text-sm font-bold mb-2"
           >
             Password
           </label>
@@ -84,7 +87,7 @@ export function Login() {
           Login
         </button>
       </form>
-
+      <p className="my-4 text-sm flex justify-between">¿No tienes una cuenta?<Link to='/register'className="hover:text-blue-500">Registrate</Link></p>
       <button
         onClick={handleGoogleSignin}
         type="button"
@@ -105,7 +108,7 @@ export function Login() {
         </svg>
         Sign in with Google
       </button>
-      <button onClick={handleGoogleSignin} className="bg-slate-50 hover:bg-slate-200 text-blanck shadow-md rounded border-2 border-gray-300 py-2 px-4 w-full">Google Sign In</button>
+      {/* <button onClick={handleGoogleSignin} className="bg-slate-50 hover:bg-slate-200 text-blanck shadow-md rounded border-2 border-gray-300 py-2 px-4 w-full">Google Sign In</button> */}
     </div>
   );
 }
