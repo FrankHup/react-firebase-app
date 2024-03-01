@@ -16,14 +16,14 @@ export function Home(){
  
     };
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <p>Cargando...</p>;
     //const {user}= useAuth()
     //console.log(user)
-    return <div>
+    return <div className='flex-row-reverse grid grid-cols-3  content-between'>
         
-        <h1>Bienvenido {user.displayName || user.email}</h1>
+        <h1 >Bienvenido {user.displayName || user.email}</h1>
 
-        <button onClick={handleLogout}>Logout</button>
+        <button onClick={handleLogout} >Cerrar Sesión</button>
         
         </div>;
 }
