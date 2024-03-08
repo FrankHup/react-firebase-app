@@ -6,7 +6,7 @@ import { Alert } from "./Alert";
 export function Login() {
   const [user, setUser] = useState({ name: "", email: "" });
 
-  const { login, loginWithGoogle } = useAuth();
+  const { login, loginWithGoogle, resetPassword } = useAuth();
   const navigate = useNavigate();
   const [error, setError] = useState();
 
@@ -39,7 +39,18 @@ export function Login() {
     }
     alert("Hubo un error al iniciar sesión con Google.");
   };
+  
+  const handleResetPassword=async()=>{
+    if (!user.email) return setError("Favor introducir solo tu correo para el cambio de contraseña");
+     try{
+    await resetPassword(user.email);
+    setError("Se ha enviado un link a tu correo para que cambies tu contraseña ");
+    } catch (error){
+        setError(error.message);
 
+    }
+
+  }
   return (
     <div className="w-full max-w-xs m-auto">
       {error && <Alert message={error} type="error" />}
@@ -82,10 +93,13 @@ export function Login() {
             onChange={handleChange}
           />
         </div>
-
+        <div className="flex items-center justify-between">
         <button className="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded focus:outline-none focus: shadow-outline">
           Login
         </button>
+          
+          <a href="#" className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" onClick={handleResetPassword}>¿Olvidaste tu contraseña?</a>
+          </div>
       </form>
       <p className="my-4 text-sm flex justify-between">¿No tienes una cuenta?<Link to='/register'className="hover:text-blue-500">Registrate</Link></p>
       <button
