@@ -44,7 +44,7 @@ export function Register() {
         <div className="mb-4">
           <label
             htmlFor="email"
-            className="block text-gray-700 text-sm font-bold mb-2"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Email
           </label>
@@ -52,15 +52,25 @@ export function Register() {
             type="email"
             name="email"
             placeholder="Enter your email"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus: outline-none focus:shadow-outline"
+            className=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             onChange={handleChange}
           />
         </div>
-
+        <div className="mb-4">
+          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" > 
+          Tipo de usuario
+          </label>
+            <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <option disabled value={0} >Selecione una opcion</option>
+              <option value="Admin" placeholder="hola">Administrador</option>
+              <option value="User">Usuario</option>
+            </select>
+         
+        </div>
         <div className="mb-4">
           <label
             htmlFor="password"
-            className="block text-gray-700 text-sm font-bold mb-2"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Password
           </label>
@@ -69,7 +79,7 @@ export function Register() {
             name="password"
             id="pwd"
             placeholder="********"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus: outline-none focus:shadow-outline"
+            className=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             onChange={handleChange}
           />
         </div>
