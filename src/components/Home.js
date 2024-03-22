@@ -83,7 +83,10 @@ export function Home() {
           </button>
         </ul>
       </div>
-      <div className="fixed"><h1>Cuerpo del desarrollo</h1></div>
+
+      <div className="fixed">
+        <h1>Cuerpo del desarrollo</h1>
+        </div>
       <footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800 fixed bottom-0 left-11 lg:left-05 lg:w-11/12">
     <div class="container mx-auto p-4 flex flex-col md:flex-row md:items-center md:justify-between">
         <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. Todos los derechos reservados.</span>
