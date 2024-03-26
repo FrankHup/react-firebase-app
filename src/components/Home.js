@@ -84,7 +84,7 @@ export function Home() {
         </ul>
       </div>
 
-      <div className="fixed">
+      <div className="fixed overflow-auto">
         <h1>Cuerpo del desarrollo</h1>
         </div>
       <footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800 fixed bottom-0 left-11 lg:left-05 lg:w-11/12">
